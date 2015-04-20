@@ -1,6 +1,12 @@
+# AppiumLibrary - RobotFramework
+
+## Documentation:
+
+[Appium Keywords](http://jollychang.github.io/robotframework-appiumlibrary/doc/AppimuLibrary.html)
+
+## Install & Configuration
 
 
-AppiumLibrary - RobotFramework
-http://jollychang.github.io/robotframework-appiumlibrary/doc/AppimuLibrary.html
+> TODO
 
-Install
+## Sample Code
