@@ -1,12 +1,3 @@
 # AppiumLibrary - RobotFramework
 
-## Documentation:
-
-[Appium Keywords](http://jollychang.github.io/robotframework-appiumlibrary/doc/AppimuLibrary.html)
-
-## Install & Configuration
-
-
-> TODO
-
-## Sample Code
+This is a appium in robot framework sample project. More detail in this [page](https://github.com/roger1changsu/myauto/wiki)
