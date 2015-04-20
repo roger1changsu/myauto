@@ -1,0 +1,9 @@
+*** Settings ***
+Documentation    This is my first rf. demo.
+Library          myaflib/TestACPSimulatorLibrary.py
+
+
+*** Test Cases ***
+Create Connection Test
+    Create Connection    t1    172.17.14.9    8888
+    Connection Should Be Created    t1    172.17.14.9    8888

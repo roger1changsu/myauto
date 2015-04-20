@@ -1,0 +1,16 @@
+*** Settings ***
+Documentation    Test selenium remote
+Library          Selenium2Library
+
+*** Variables ***
+${SERVER}        www.baidu.com
+${BROWSER}       ie
+${BAIDU_URL}     http://${SERVER}/
+${SEARCH_KEYWORK}    timanetworks
+${REMOTE_SELENIUM_URL}    http://192.168.0.103:4444/wd/hub
+
+*** Test Cases ***
+Baidu Search Engine Test
+    Open Browser    ${BAIDU_URL}    browser=${BROWSER}    remote_url=${REMOTE_SELENIUM_URL}
+    Input Text    kw    timanetworks
+    Click Button    su
