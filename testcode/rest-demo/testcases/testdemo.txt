@@ -1,0 +1,37 @@
+*** Settings ***
+Documentation    Using robotframework-httplibrary for rest api
+Library    HttpLibrary.HTTP
+
+*** Variables ***
+${SERVER_HOST}    127.0.0.1:3000
+
+*** Keywords ***
+GET Json Request
+    [Arguments]    ${host}    ${uri}
+    Create HTTP Context    host=${host}    scheme=http
+    GET    ${uri}
+    ${respBody}=    Get Response Body
+    [return]    ${respBody}
+
+POST Json Request
+    [Arguments]    ${host}    ${uri}    ${json_str}
+    Create HTTP Context    host=${host}    scheme=http
+    Set Request Body    ${json_str}
+    Set Request Header    Content-Type    application/json 
+    POST    ${uri} 
+    ${respBody}=    Get Response Body
+    [return]    ${respBody}
+
+*** Test Cases ***
+Example_01 : Test Get Request With Json
+    ${resp}=    GET Json Request    ${SERVER_HOST}    /json
+    Json Value Should Equal    ${resp}    /code    "success"
+    Json Value Should Equal    ${resp}    /msg/name    "yeah"
+
+
+Example_02 : Test Post Request With Json
+    ${resp}=    POST Json Request    ${SERVER_HOST}    /json    {"username":"shit"}
+    Json Value Should Equal    ${resp}    /code    "success"
+    Json Value Should Equal    ${resp}    /msg/name    "shit"
+
+# Example_03 : Data-driven
