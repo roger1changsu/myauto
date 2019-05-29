@@ -6,11 +6,11 @@ Library          Selenium2Library
 ${SERVER}        www.baidu.com
 ${BROWSER}       ie
 ${BAIDU_URL}     http://${SERVER}/
-${SEARCH_KEYWORK}    timanetworks
+${SEARCH_KEYWORK}    baidu
 ${REMOTE_SELENIUM_URL}    http://192.168.0.103:4444/wd/hub
 
 *** Test Cases ***
 Baidu Search Engine Test
     Open Browser    ${BAIDU_URL}    browser=${BROWSER}    remote_url=${REMOTE_SELENIUM_URL}
-    Input Text    kw    timanetworks
+    Input Text    kw    baidu
     Click Button    su
